@@ -1,0 +1,120 @@
+﻿@model IEnumerable<MKHaberSistemi.Core.Domain.Entities.Etiket>
+@{
+    ViewBag.Title = "Etiketler";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/MKHaber.css" rel="stylesheet" />
+<link href="~/plugins/pace/pace.css" rel="stylesheet" />
+<!-- DataTables -->
+<link href="~/Content/fonts.googleapis.com.css" rel="stylesheet" />
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+@*<link href="~/Content/TableDetay.css" rel="stylesheet" />*@
+<link href="~/Content/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/plugins/datatables/DataTableTr.js"></script>
+<script>
+    $(document).ready(function () {
+        Pace.restart();
+    });
+</script>
+<script src="~/plugins/pace/pace.min.js"></script>
+<script src="~/Scripts/sweetalert2.all.min.js"></script>
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.js"></script>
+<script src="~/Scripts/AdminControllerScripts/Etiket.js"></script>
+<!-- Main content -->
+<section class="content-header ">
+    <h1>
+        Haber Etiket
+        @* <small>advanced tables</small>*@
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Dashboard/Index"><i class="fa fa-home"></i> Anasayfa</a></li>
+        <li class="active">Etiket</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- /.box -->
+            <div class="box">
+                <div class="box-header post">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="col-md-10 ">
+                                <h4 class=""><i class="fa fa-list "></i> <b>Etiketler</b>  </h4>
+                            </div>
+                            <div class="col-xs-2 ">
+                                <a href="/Admin/Etiket/Create" class="btn  btn-primary kaydetButton" title="Yeni kategori">
+                                    <i class="fa fa-plus solbtn-yazi"></i>        Yeni Etiket
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="DataTableTr" class="table table-bordered table-responsive table-hover table-striped">
+                        <thead>
+                            <tr class="">
+                                <th>Ad</th>
+                                <th>Seo Ad</th>
+                                <th>Açıklama</th>
+                                <th>Durum</th>
+                                <th>Ekeleme Tarihi</th>
+                                <th>Son Düzenlenme Tarihi</th>
+                                <th class="col-xs-2"><span>Detay</span> - <span>Düzenle</span> - <span>Sil</span>   </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td><span class="table-horta">@item.Ad</span></td>
+                                <td><span class="table-horta">@item.SeoAd</span></td>
+                                <td>@item.Aciklama</td>
+                                <td>
+                                    @if (item.IsActive)
+                                    {
+                                        /**/
+                                        <i class="fa fa-check secimtrue-kategori"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="fa fa-times secimfalse-kategori" aria-hidden="true"></i>
+                                    }
+                                </td>
+                                <td><p style="margin-left:50px"></p>@item.EklemeTarihi</td>
+                                <td><p style="margin-left:50px"></p>@item.GuncellemeTarihi</td>
+                                
+                                <td class="col-xs-2">
+                                    <a href="@Url.Action("Details","Etiket",new { id=item.ID })"><span class="btn btn-success  glyphicon glyphicon-info-sign"> </span></a>
+
+
+                                    <a href="@Url.Action("edit","Etiket",new { id=item.ID })"><span class="btn btn-primary glyphicon glyphicon-pencil" style="text-align:center"> </span></a>
+
+                                    <a onclick='Delete(@item.ID)'><span class="btn btn-danger glyphicon glyphicon-trash"></span></a>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Rendering </th>
+                                <th>Browser</th>
+                                <th>Platform(s)</th>
+                                <th>Engine version</th>
+                                <th>CSS grade</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+
+

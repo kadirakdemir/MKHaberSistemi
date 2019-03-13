@@ -1,0 +1,38 @@
+﻿@model IQueryable<MKHaberSistemi.Core.Domain.Entities.Haber>
+
+<div class="slider">
+
+    <script>
+                // You can also use "$(window).load(function() {" ,kategoriAdi=item.Kategori.Ad,haberBaslik=item.Baslik
+                $(function () {
+                    $("#conference-slider").responsiveSlides({
+                        auto: true,
+                        manualControls: '#slider3-pager',
+                    });
+                });
+    </script>
+    <div class="conference-slider">
+        <!-- Slideshow 3 -->
+        <ul class="conference-rslide rslides rslides1" id="conference-slider">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a href="@Url.Action("HaberDetay","Haber",new { id=item.ID,kategoriAdi=item.Kategori.SeoAd,haberBaslik=item.SeoBaslik})"><img src="~/@item.ProfilRsmUrlBuyuk" width="500" height="350" alt=""></a>
+                    <div class="breaking-news-title"><a><p>@item.Aciklama </p></a></div>
+                </li>
+            }
+
+
+        </ul>
+        <!-- Slideshow 3 Pager -->
+        <ul id="slider3-pager">
+            @foreach (var item in Model)
+            {
+                <li><a href="@Url.Action("HaberDetay","Haber",new { id=item.ID,kategoriAdi=item.Kategori.SeoAd,haberBaslik=item.SeoBaslik})"><img src="~/@item.ProfilRsmUrlOrta" width="120" height="75" alt=""></a></li>
+            }
+
+        </ul>
+
+    </div>
+    <h5 class="breaking">Son dakika haberler</h5>
+</div>

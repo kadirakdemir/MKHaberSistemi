@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F5A7BD4D-9833-4FA5-9489-DF854541A87F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{E793D023-420D-44CA-9079-624406CBDDC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{15273004-6447-4896-8603-72AC833CE0B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKHaberSistemi.Core", "MKHaberSistemi.Core\MKHaberSistemi.Core.csproj", "{D35856B4-B8CF-462A-BC8D-5D20C1D2A74A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKHaberSistemi.Service", "MKHaberSistemi.Service\MKHaberSistemi.Service.csproj", "{2A817983-9712-4A5F-B432-46A455380D1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKHaberSistemi.IOC", "MKHaberSistemi.IOC\MKHaberSistemi.IOC.csproj", "{A6FC2D4F-9598-46CB-B02A-3ED139BFCDE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKHaberSistemi.Utilities", "MKHaberSistemi.Utilities\MKHaberSistemi.Utilities.csproj", "{A1990DE6-D5B8-4CBD-849F-BE1016B80FD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKHaberSistemi.Web.Infrastructure", "MKHaberSistemi.Web.Infrastructure\MKHaberSistemi.Web.Infrastructure.csproj", "{86414588-EC66-4255-9670-076576F8BCC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKHaberSistemi.Data", "MKHaberSistemi.Data\MKHaberSistemi.Data.csproj", "{14E487B6-57BB-4885-95E3-C9C512ECCE3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKHaberSistemi.Web", "MKHaberSistemi.Web\MKHaberSistemi.Web.csproj", "{3F5A7144-6F93-4FDA-BCCB-6EE4058707A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D35856B4-B8CF-462A-BC8D-5D20C1D2A74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35856B4-B8CF-462A-BC8D-5D20C1D2A74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35856B4-B8CF-462A-BC8D-5D20C1D2A74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35856B4-B8CF-462A-BC8D-5D20C1D2A74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A817983-9712-4A5F-B432-46A455380D1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A817983-9712-4A5F-B432-46A455380D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A817983-9712-4A5F-B432-46A455380D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A817983-9712-4A5F-B432-46A455380D1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6FC2D4F-9598-46CB-B02A-3ED139BFCDE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6FC2D4F-9598-46CB-B02A-3ED139BFCDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6FC2D4F-9598-46CB-B02A-3ED139BFCDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6FC2D4F-9598-46CB-B02A-3ED139BFCDE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1990DE6-D5B8-4CBD-849F-BE1016B80FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1990DE6-D5B8-4CBD-849F-BE1016B80FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1990DE6-D5B8-4CBD-849F-BE1016B80FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1990DE6-D5B8-4CBD-849F-BE1016B80FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86414588-EC66-4255-9670-076576F8BCC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86414588-EC66-4255-9670-076576F8BCC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86414588-EC66-4255-9670-076576F8BCC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86414588-EC66-4255-9670-076576F8BCC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E487B6-57BB-4885-95E3-C9C512ECCE3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E487B6-57BB-4885-95E3-C9C512ECCE3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E487B6-57BB-4885-95E3-C9C512ECCE3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E487B6-57BB-4885-95E3-C9C512ECCE3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F5A7144-6F93-4FDA-BCCB-6EE4058707A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F5A7144-6F93-4FDA-BCCB-6EE4058707A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F5A7144-6F93-4FDA-BCCB-6EE4058707A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F5A7144-6F93-4FDA-BCCB-6EE4058707A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D35856B4-B8CF-462A-BC8D-5D20C1D2A74A} = {E793D023-420D-44CA-9079-624406CBDDC7}
+		{2A817983-9712-4A5F-B432-46A455380D1F} = {E793D023-420D-44CA-9079-624406CBDDC7}
+		{A6FC2D4F-9598-46CB-B02A-3ED139BFCDE4} = {E793D023-420D-44CA-9079-624406CBDDC7}
+		{A1990DE6-D5B8-4CBD-849F-BE1016B80FD1} = {E793D023-420D-44CA-9079-624406CBDDC7}
+		{86414588-EC66-4255-9670-076576F8BCC8} = {15273004-6447-4896-8603-72AC833CE0B3}
+		{14E487B6-57BB-4885-95E3-C9C512ECCE3B} = {F5A7BD4D-9833-4FA5-9489-DF854541A87F}
+		{3F5A7144-6F93-4FDA-BCCB-6EE4058707A8} = {15273004-6447-4896-8603-72AC833CE0B3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A53FF881-BB15-4E76-BE6A-556DADCCF980}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://kadirakdemiir.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MKHaberSistemi.Core\\MKHaberSistemi.Core.csproj
+		SccProjectTopLevelParentUniqueName1 = MKHaberSistemi.sln
+		SccProjectName1 = MKHaberSistemi.Core
+		SccLocalPath1 = MKHaberSistemi.Core
+		SccProjectUniqueName2 = MKHaberSistemi.Data\\MKHaberSistemi.Data.csproj
+		SccProjectTopLevelParentUniqueName2 = MKHaberSistemi.sln
+		SccProjectName2 = MKHaberSistemi.Data
+		SccLocalPath2 = MKHaberSistemi.Data
+		SccProjectUniqueName3 = MKHaberSistemi.IOC\\MKHaberSistemi.IOC.csproj
+		SccProjectTopLevelParentUniqueName3 = MKHaberSistemi.sln
+		SccProjectName3 = MKHaberSistemi.IOC
+		SccLocalPath3 = MKHaberSistemi.IOC
+		SccProjectUniqueName4 = MKHaberSistemi.Service\\MKHaberSistemi.Service.csproj
+		SccProjectTopLevelParentUniqueName4 = MKHaberSistemi.sln
+		SccProjectName4 = MKHaberSistemi.Service
+		SccLocalPath4 = MKHaberSistemi.Service
+		SccProjectUniqueName5 = MKHaberSistemi.Utilities\\MKHaberSistemi.Utilities.csproj
+		SccProjectTopLevelParentUniqueName5 = MKHaberSistemi.sln
+		SccProjectName5 = MKHaberSistemi.Utilities
+		SccLocalPath5 = MKHaberSistemi.Utilities
+		SccProjectUniqueName6 = MKHaberSistemi.Web.Infrastructure\\MKHaberSistemi.Web.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName6 = MKHaberSistemi.sln
+		SccProjectName6 = MKHaberSistemi.Web.Infrastructure
+		SccLocalPath6 = MKHaberSistemi.Web.Infrastructure
+		SccProjectUniqueName7 = MKHaberSistemi.Web\\MKHaberSistemi.Web.csproj
+		SccProjectTopLevelParentUniqueName7 = MKHaberSistemi.sln
+		SccProjectName7 = MKHaberSistemi.Web
+		SccLocalPath7 = MKHaberSistemi.Web
+	EndGlobalSection
+EndGlobal

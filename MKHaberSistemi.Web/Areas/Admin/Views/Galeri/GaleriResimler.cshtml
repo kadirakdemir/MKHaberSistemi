@@ -1,0 +1,280 @@
+﻿@model IEnumerable<MKHaberSistemi.Core.Domain.Entities.Resim>
+@{
+    ViewBag.Title = "GaleriResimler";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Scripts/sweetalert2.all.min.js"></script>
+@*<link href="~/Content/MKHaber.css" rel="stylesheet" />*@
+<link href="~/plugins/Dropzone/min/basic.min.css" rel="stylesheet" />
+<link href="~/plugins/Dropzone/min/dropzone.min.css" rel="stylesheet" />
+<link href="~/plugins/fancybox-master/dist/jquery.fancybox.min.css" rel="stylesheet" />
+<script src="~/plugins/Dropzone/min/dropzone.min.js"></script>
+<link href="~/Content/toastr.min.css" rel="stylesheet" />
+<script src="~/Scripts/toastr.min.js"></script>
+<script src="~/Scripts/DropzoneAyarlar/DropzoneAyar.js"></script>
+<script src="~/plugins/fancybox-master/dist/jquery.fancybox.min.js"></script>
+<section class="content-header ">
+    <h1>
+        MKHaber Galeri Resimleri
+        @* <small>advanced tables</small>*@
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Dashboard/Index"><i class="fa fa-home"></i> Anasayfa</a></li>
+
+        <li class="active">MKHaber Galeri</li>
+    </ol>
+</section>
+<section class="content" style="margin-left:40px">
+
+    <div class="row">
+        <div class="col-md-11">
+            <!-- /.box -->
+            <div class="" id="resimyukle">
+                @using (Html.BeginForm("GaleriResimlerEkle", "Galeri", new { id = ViewBag.GaleriId, ad = ViewBag.GaleriAdi }, FormMethod.Post, new { @class = "dropzone", id = "dropzoneForm", enctype = "multipart/form-data" }))
+                {
+                    <div class="fallback">
+                        <input name="file" type="file" multiple />
+                        <input type="submit" value="Upload" />
+                    </div>
+                }
+             
+                <div>
+
+                </div>
+
+                <div class="col-md-12" style="margin-top:10px">
+
+                    <div class="row">
+                        <button type="button" class="btn btn-warning btn-upload-iptal" id="iptal"><i class="fa fa-check solbtn-yazi"></i>İptal</button>                   
+                  
+                        <button type="button" class="btn btn-success btn-upload" id="yukle"><i class="glyphicon glyphicon-open solbtn-yazi"></i>Yükle</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="">
+            <div class="box">
+                <div class="col-md-12" id="resimler" >
+
+                    @foreach (var item in Model)
+                    {
+                    <div class="col-md-3 galeriresimDiv">
+                        <span>
+                            <a href="~/@item.RsmUrlBuyuk" data-fancybox="images" data-width="1500" data-height="1000">
+                                <img class="galeriresim" src="~/@item.RsmUrlOrjinal" alt="@item.Ad" />
+                            </a>
+                            @if (item.IsActive)
+                            {
+                                <p class="galeriresim-yazi"> Durum:  <i class="fa fa-check" ></i>  </p>
+                            }
+
+                            <p class="galeriresim-yazi"> Boyut:  @item.IcerikUzunlugu bayt </p>
+
+                        </span>
+                    </div>
+                        
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</section>
+<style>
+
+    .btn-upload {
+        float: right;
+        font-size: 16px;
+        /*font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+        margin-right: 0px;
+        width: 200px;
+        height: 50px;
+        border-radius: 0px;
+        padding-top: 0px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .btn-upload-iptal {
+        float: right;
+        font-size: 16px;
+        /*font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+        
+        width: 200px;
+        height: 50px;
+        border-radius: 0px;
+        padding-top: 0px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .btntrash {
+        width: 43px;
+        border: solid;
+        border-width: 1px;
+        border-radius: 8px;
+        font-size: 16px;
+        color: white;
+        font-weight: 600;
+        text-align: left;
+        margin-left: 39px;
+    }
+
+    .galeriresim {
+        width: 200px;
+        height: 130px;
+        margin-left: 20px;
+        margin-top: 40px;
+    }
+
+    .galeriresim-yazi {
+        margin-left: 25px;
+    }
+
+    .galeriresimDiv {
+        border: solid;
+        border-width: 2px;
+        border-color: white;
+    }
+
+
+    .dropzone {
+        border: 3px solid #e1edf8;
+        border-radius: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 26px;
+        color: #9440bb;
+    }
+</style>
+
+<script>
+
+    //$("#yukle").on('click', function () {
+    //    mydropzone.processQueue();
+    //});
+    //$("#iptal").on('click', function () {
+    //    mydropzone.removeAllFiles(true);
+    //});
+
+    //$('[data-fancybox="images"]').fancybox({
+    //    thumbs: {
+    //        autoStart: true,
+    //        axis: 'x'
+    //    }
+    //});
+    //$().fancybox({
+    //    selector: '[data-fancybox="gallery"]',
+    //    loop: true
+    //});
+
+    //$('[data-fancybox]').fancybox({
+    //    protect: true
+    //});
+
+    $().fancybox({
+        selector: '[data-fancybox="images"]',
+        loop: true,
+        buttons: [
+            "zoom",
+            "share",
+            "slideShow",
+            "fullScreen",
+            "download",
+            "thumbs",
+            "close"
+        ],
+    });
+
+    Dropzone.options.dropzoneForm = {
+
+        maxFilesize: 5,
+        maxFiles: 30,
+        uploadMultiple: true,
+        autoProcessQueue: false,
+        addRemoveLinks: "true",
+        paramName: "file",
+        parallelUploads: 30,
+        dictDefaultMessage: "Resim eklemek için tıklayın <br/> veya sürükleyip bırakın.  <i class='glyphicon glyphicon-import'><i/>",
+        clickable: true,
+        autoProcessQueue: false,
+        init: function () {
+            this.on("maxfilesexceeded", function (data) {
+                var res = eval('(' + data.xhr.responseText + ')');
+
+            });
+            var yukleButton = document.querySelector("#yukle");
+            var iptalButton = document.querySelector("#iptal");
+            var myDropzone = this;
+
+            yukleButton.addEventListener("click", function () {
+                myDropzone.processQueue();
+            });
+
+            iptalButton.addEventListener("click", function () {
+                myDropzone.removeAllFiles(true);
+            });
+
+            this.on("addedfile", function (file) {
+                //var submitButton = document.querySelector("#yukle");
+                //var wrapperThis = this;
+
+                //submitButton.addEventListener("click", function () {
+                //    wrapperThis.processQueue();
+                // Create the remove button
+                var removeButton = Dropzone.createElement("<button class='form-control btn btn-danger btntrash glyphicon glyphicon-trash'></button>");
+
+
+                // Capture the Dropzone instance as closure.
+                var _this = this;
+
+                // Listen to the click event
+                removeButton.addEventListener("click", function (e) {
+                    // Make sure the button click doesn't submit the form:
+                    e.preventDefault();
+                    e.stopPropagation();
+                    // Remove the file preview.
+                    _this.removeFile(file);
+                    // If you want to the delete the file on the server as well,
+                    // you can do the AJAX request here.
+                });
+
+                // Add the button to the file preview element.
+                file.previewElement.appendChild(removeButton);
+            });
+        },
+        success: function (response) {
+
+            Command: toastr["success"]("My name is Inigo Montoya. You killed my father. Prepare to die!")
+
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-center",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            setTimeout(function () {
+                location.reload();
+            }, 1500);
+        }
+
+    };
+</script>

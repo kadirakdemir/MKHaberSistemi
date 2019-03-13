@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    @*<meta name="description" content="@ViewBag.Description" />
+        <meta name="keywords" content="@ViewBag.Keywords" />*@
+
+    <title> MKHaber </title>
+
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/flexslider.css" rel="stylesheet" />
+
+    <link href="~/Content/css/popuo-box.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+
+
+    <!-- Custom Theme files -->
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Custom Theme files -->
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+
+    <script src="~/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    @*<script src="~/Scripts/jquery-3.3.1.min.js"></script>*@
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/jquery.leanModal.min.js"></script>
+    <script src="~/Scripts/js/responsiveslides.min.js"></script>
+    <script src="~/Scripts/js/jquery.leanModal.min.js"></script>
+    <script src="~/Scripts/js/jquery.flexisel.js"></script>
+    <script src="~/Scripts/js/jquery.flexslider.js"></script>
+    <script src="~/Scripts/js/jquery.magnific-popup.js"></script>
+
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="MKHaber" />
+    <script type="application/x-javascript">
+
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--webfont-->
+</head>
+<body>
+    <div class="container">
+        <div class="news-paper">
+            <header class="main-header">
+                @Html.Partial("_Header")
+            </header>
+          
+            <div class="clearfix"></div>
+            <div class="content-wrapper">
+                
+                @RenderBody()
+                <hr />
+            </div>
+            <footer class="main-footer">
+                @Html.Partial("_Footer")
+            </footer>
+            @*<aside class="control-sidebar control-sidebar-dark">
+                    @Html.Partial("_ControlSidebar")
+                </aside>*@
+        </div>
+    </div>
+
+
+   
+    @*  @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)*@
+</body>
+</html>

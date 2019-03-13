@@ -1,0 +1,158 @@
+﻿@using Microsoft.AspNet.Identity
+<link href="~/Content/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<!-- header-section-starts -->
+
+<script src="~/Scripts/sweetalert2.all.js"></script>
+<script src="~/Scripts/AdminControllerScripts/Account/AccountScript.js"></script>
+<div class="header">
+    <div class="header-left">
+        <div class="logo">
+            <a href="@Url.Action("Index","Home")">
+                <h6>the</h6>
+                <h1>MK <span>Haber</span></h1>
+            </a>
+        </div>
+    </div>
+    <div class="social-icons">
+        <ul>
+
+            <li class="dropdown user user-menu">
+
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                    <span class="hidden-xs">
+                        @if (Request.IsAuthenticated)
+                        {
+                           @User.Identity.GetUserName()
+                        }
+                        else{ <span>
+                                  <a href="@Url.Action("Login","Account")">Üye Girişi</a>
+                              </span>
+                              <span>
+                                  <a href="@Url.Action("Login","Admin/Account")">Admin Girişi</a>
+                              </span>
+                        }
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+
+
+                    <!-- Menu Footer-->
+                    <li class="user-footer">
+                        <div class="pull-left">
+                            <a href="#">Profile</a>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="pull-right">
+                            @if (Request.IsAuthenticated)
+                            {
+                                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <a href="javascript:document.getElementById('logoutForm').submit()" class="">Çıkış</a>
+                                }
+                            }
+
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="twitter"></i></a></li>
+            <li><a href="#"><i class="facebook"></i></a></li>
+            <li><a href="#"><i class="rss"></i></a></li>
+            <li>
+                <div class="facebook">
+                    <div id="fb-root"></div>
+
+                    <div id="fb-root"></div>
+                </div>
+            </li>
+        </ul>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
+        <div class="fb-like" data-href="" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+
+
+    </div>
+    <div class="clearfix"></div>
+    <div class="header-right">
+        <div class="top-menu">
+            <ul>
+                <li><a href="@Url.Action("Index","Home")">Anasayfa</a></li> |
+                <li><a href="@Url.Action("About","Home")">Hakkında</a></li> |
+                <li><a href="@Url.Action("Contact","Home")">İletişim</a></li> |
+                <li><a class="play-icon popup-with-zoom-anim" href="#small-dialog1">Subscribe</a></li>
+            </ul>
+        </div>
+        <!---pop-up-box---->
+        <!---//pop-up-box---->
+        <div id="small-dialog1" class="mfp-hide">
+            <div class="signup">
+                <h3>Subscribe</h3>
+                <h4>Enter Your Valid E-mail</h4>
+                <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" />
+                <div class="clearfix"></div>
+                <input type="submit" value="Subscribe Now" />
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('.popup-with-zoom-anim').magnificPopup({
+                    type: 'inline',
+                    fixedContentPos: false,
+                    fixedBgPos: true,
+                    overflowY: 'auto',
+                    closeBtnInside: true,
+                    preloader: false,
+                    midClick: true,
+                    removalDelay: 300,
+                    mainClass: 'my-mfp-zoom-in'
+                });
+
+            });
+        </script>
+        <div class="search">
+            <form>
+                <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" />
+                <input type="submit" value="">
+            </form>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<span class="menu"></span>
+
+<div class="menu-strip ">
+    <ul class="deneme">
+        <li><a href="#">GÜNDEM</a></li>
+        <li><a href="#">DÜNYA</a></li>
+        <li><a href="#">EKONOMİ</a></li>
+        <li><a href="#">SİYASET</a></li>
+        <li><a href="#">SPOR</a></li>
+        <li><a href="#">EĞİTİM</a></li>
+        <li><a href="#">TEKNOLOJİ</a></li>
+        <li><a href="#">KÜLTÜR</a></li>
+        <li><a href="#">SAĞLIK</a></li>
+        <li><a href="#">MAGAZİN</a></li>
+    </ul>
+</div>
+<!-- script for menu -->
+<script>
+    $("span.menu").click(function () {
+        $(".menu-strip").slideToggle("slow", function () {
+            // Animation complete.
+        });
+    });
+</script>
+<!-- script for menu -->

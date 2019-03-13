@@ -1,0 +1,109 @@
+﻿@model MKHaberSistemi.Core.Domain.Entities.Haber
+    @{
+//ViewBag.Title = Model.Baslik;
+//ViewBag.Aciklama = Model.Aciklama;
+//ViewBag.Keywords = Model.EtiketAdlari;
+//Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+
+
+    <!-- header-section-starts -->
+
+    <div class="clearfix"></div>
+    <div class="news-paper">
+        <div class="clearfix"></div>
+        <div class="blog-main-content">
+            <div class="col-md-9 total-news">
+
+                <div class="grids">
+                    <div class="grid box">
+                        <div class="grid-header">
+                            <a class="gotosingle" href="singlepage.html">@Model.Baslik </a>
+                            <ul>
+                                <li><span>@String.Format("{0:dd/MM/yyyy HH:mm:ss}", Model.YayinlamaTarihi) </span></li>
+                                <li><a href="#">@Model.YorumSayisi Yorum</a></li>
+                            </ul>
+                        </div>
+                        <div class="singlepage">
+
+                            <p>
+                                <article class="">
+                                    @Html.Raw(Model.Icerik)
+                                </article>
+                            </p>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="comments">
+                            <ul>
+                                <li><a href="#"><img src="~/Content/web/images/views.png" title="view" /></a></li>
+                                <li><a href="#"><img src="~/Content/web//images/likes.png" title="likes" /></a></li>
+                                <li><a href="#"><img src="~/Content/web//images/link.png" title="link" /></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+
+                <ul class="comment-list">
+                    <h5 class="post-author_head">Written by <a href="#" title="Posts by admin" rel="author">admin</a></h5>
+                    <li>
+                        <img src="~/Content/web/images/avatar.png" class="img-responsive" alt="">
+                        <div class="desc">
+                            <p>View all posts by: <a href="#" title="Posts by admin" rel="author">admin</a></p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                </ul>
+                <div class="content-form">
+                    <h3>Leave a comment</h3>
+                    <form>
+                        <input type="text" placeholder="Name" required />
+                        <input type="text" placeholder="Email" required />
+                        <input type="text" placeholder="Phone" required />
+                        <textarea placeholder="Message"></textarea>
+                        <input type="submit" value="SEND" />
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-3 side-bar">
+                <div class="l_g_r">
+                    <div class="posts">
+                        <h4>Recent posts</h4>
+                        <h6><a href="#">Aliquam tincidunt mauris</a></h6>
+                        <h6><a href="#">Vestibulum auctor lipsum</a></h6>
+                        <h6><a href="#">Nunc dignissim risus</a></h6>
+                        <h6><a href="#">Cras ornare tristiqu</a></h6>
+                    </div>
+                    <div class="recent-comments">
+                        <h4>Recent Comments</h4>
+                        <h6><a href="#">Amada Doe <span>on</span> Hello World!</a></h6>
+                        <h6><a href="#">Peter Doe <span>on</span> Photography</a></h6>
+                        <h6><a href="#">Steve Roberts <span>on</span> HTML5/CSS3</a></h6>
+                        <h6><a href="#">Doe Peter<span>on</span> Photography</a></h6>
+                    </div>
+                    <div class="archievs">
+                        <h4>Archives</h4>
+                        <h6><a href="#">October 2014</a></h6>
+                        <h6><a href="#">September 2014</a></h6>
+                        <h6><a href="#">August 2014</a></h6>
+                        <h6><a href="#">July 2014</a></h6>
+                    </div>
+                    <div class="categories">
+                        <h4>Categories</h4>
+                        <h6><a href="#">Vivamus vestibulum nulla</a></h6>
+                        <h6><a href="#">Integer vitae libero ac risus e</a></h6>
+                        <h6><a href="#">Vestibulum commo</a></h6>
+                        <h6><a href="#">Cras iaculis ultricies</a></h6>
+                    </div>
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+

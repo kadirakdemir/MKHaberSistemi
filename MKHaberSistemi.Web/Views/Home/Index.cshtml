@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+    ViewBag.Description = "Haberleri Son dakika haberler";
+    ViewBag.Keywords = "Tarih, Edebiyat, Kültür, Bilim, Teknoloji, Sanat, Kadın, Yemek, Moda, Alış Veriş, Sağlık, Eğitim, Politika, Magazin, Otomobil, Evlilik, Ekonomi, Finans, Spor, Dünya, Oyun, Medya, Tv, Sosyal Medya";
+}
+<link rel="stylesheet" href="~/Content/css/flexslider.css" type="text/css" media="screen" />
+<script>
+    $(window).load(function () {
+        $('#f1').flexslider({
+            animation: "slide",
+            rtl: true,
+            start: function (slider) {
+                $('body').removeClass('loading');
+            }
+        });
+
+    });
+</script>
+<div class="main-content">
+    <div class="col-md-9 total-news">
+        @Html.Action("_OrtaSayfaHaber", "Home")
+        <div class="posts">
+            @Html.Action("_EnSonOkunanHaberler", "Home")
+            @Html.Action("_ResimGaleri", "Home")
+        </div>
+    </div>
+   
+    <div class="col-md-3 side-bar">
+
+        <div class="clearfix"></div>
+        @Html.Action("_PopulerHaberler", "Home")        
+        <div class="clearfix"></div>
+        <div class="subscribe-now">
+            <div class="discount">
+                <a href="#"> </a>
+                <div class="save">
+                    <p>MK HABER</p>
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <h3 class="sn">kayıt ol</h3>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+</div>

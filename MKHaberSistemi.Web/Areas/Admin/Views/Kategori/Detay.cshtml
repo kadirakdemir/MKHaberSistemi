@@ -1,0 +1,144 @@
+﻿@model MKHaberSistemi.Web.Areas.Admin.Models.KategoriModels.DetayKategoriModel
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/MKHaber.css" rel="stylesheet" />
+<link href="~/plugins/iCheck/square/blue.css" rel="stylesheet" />
+<link href="~/Content/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Scripts/sweetalert2.all.min.js"></script>
+<script src="~/plugins/iCheck/icheck.min.js"></script>
+<script src="~/Scripts/AdminControllerScripts/KategoriScript.js"></script>
+<section class="content-header  ">
+    <h1>
+        Kategori Bilgileri
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Dashboard/Index"><i class="fa fa-home"></i> Anasayfa</a></li>
+        <li><a href="/Admin/Kategori/Index"><i class=""></i>Haber Kategori</a></li>
+        <li class="active">Kategori Detay</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row ">
+        <div class="col-md-3">
+            <!-- Profile Image -->
+            <div class="box box-primary">
+                <div class="box-body box-profile">
+                    <img class="profile-user-img img-responsive img-circle " src="~/@Model.ProfileResimUrl" alt="kategori Resmi" width="100" height="100">
+                    <h3 class="profile-username text-center">Nina Mcintire</h3>
+                    <p class="text-muted text-center">Software Engineer</p>
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                            <b>Followers</b> <a class="pull-right">1,322</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Following</b> <a class="pull-right">543</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Friends</b> <a class="pull-right">13,287</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-9">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Kategori Detay</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <div class="box-body">
+                    <div class="row ">
+                        <div class="col-md-12 formdetay ">
+                            <div class="col-md-6 ">
+                                @Html.LabelFor(model => model.UstKategori, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })
+                            </div>
+                            <div class="col-md-6 ">
+                                <a> @Html.DisplayFor(model => model.UstKategori, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })</a>
+                            </div>
+                        </div>
+                        <div class="col-md-12 formdetay">
+                            <div class="col-md-6 ">
+                                @Html.LabelFor(model => model.Ad, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })
+                            </div>
+                            <div class="col-md-6">
+                                <a> @Html.DisplayFor(model => model.Ad, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })</a>
+                            </div>
+                        </div>
+                        <div class="col-md-12 formdetay">
+                            <div class="col-md-6 ">
+                                @Html.LabelFor(model => model.Aciklama, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })
+                            </div>
+                            <div class="col-md-6">
+                                <a> @Html.DisplayFor(model => model.Aciklama, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })</a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 formdetay">
+                            <div class="col-md-6 ">
+                                @Html.LabelFor(model => model.Diger, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })
+                            </div>
+                            <div class="col-md-6">
+                                <a> @Html.DisplayFor(model => model.Diger, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })</a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 formdetay">
+                            <div class="col-md-6 ">
+                                @Html.LabelFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })
+                            </div>
+                            <div class="col-md-6">
+                                <a> @Html.DisplayFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })</a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 formdetay">
+                            <div class="col-md-6 ">
+                                @Html.LabelFor(model => model.SeoAd, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })
+                            </div>
+                            <div class="col-md-6">
+                                <a> @Html.DisplayFor(model => model.SeoAd, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })</a>
+                            </div>
+                        </div>
+                        <div class="col-md-12 formdetay">
+                            <div class="col-md-6 ">
+                                @Html.LabelFor(model => model.ProfileResimUrl, new { htmlAttributes = new { @class = "form-control", id = "Adi" } })
+                            </div>
+                            <div class="col-md-6">
+                                <img class="img-responsive rsm-detay" src="~/@Model.ProfileResimUrl" alt="kategori Resmi" title="kategori" />
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer ">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <a class="btnsubmit  iptal" href="@Url.Action("Duzenle","Kategori",new { id=Model.Id})"><i class="glyphicon glyphicon-pencil solbtn-yazi">Düzenle</i> </a>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
+        });
+    </script>
+</section>

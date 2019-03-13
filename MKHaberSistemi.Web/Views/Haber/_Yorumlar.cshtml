@@ -1,0 +1,29 @@
+﻿
+@model MKHaberSistemi.Web.Models.CommentModel
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="news-comment-new">
+        @Html.Partial("_YeniYorum", new MKHaberSistemi.Web.Models.EditCommentModel
+    {
+        HaberId = Model.HaberId
+    })
+    </div>
+    <hr />
+}
+else
+{
+    <div>
+        Yorum eklemek için @Html.ActionLink("Giriş Yap", "Login", "Account")
+    </div>
+}
+<div style="text-align:center;">
+    <strong>YORUMLAR</strong>
+</div>
+<hr />
+@foreach (var item in Model.Yorumlar)
+{
+    <div class="news-comment">
+        <div class="news-comment-body">@item.Icerik</div>
+        <div class="news-comment-user">@item.Kullanici.UserName</div>
+    </div>
+}

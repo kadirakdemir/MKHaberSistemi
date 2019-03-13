@@ -1,0 +1,124 @@
+﻿<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+        <div class="pull-left image">
+            <img src="~/Content/web/images/avatar.png" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+            <p>@Session["Name"]</p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+    </div>
+    <!-- search form -->
+    <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+    <!-- /.search form -->
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+        <li class="header">Ana Menü</li>
+
+        <li class="active"><a href="/Admin/Dashboard/Index"><i class="fa fa-home"></i> <span>Anasayfa</span></a></li>
+
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-globe"></i> <span>Haber Yönetimi</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="/Admin/Haber/Index"><i class="fa fa-newspaper-o"></i>Haberler</a></li>
+                <li class="active"><a href="/Admin/Kategori/Index"><i class="fa fa-th-large"></i>Haber Kategori</a></li>
+                <li class=""><a href="/Admin/Etiket/Index"><i class="fa fa-tags"></i>Haber Etiket</a></li>             
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-globe"></i> <span>Meya Yönetimi</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="/Admin/Galeri/Index"><i class="fa fa-file-image-o"></i>Resim Galeri</a></li>
+                <li class="active"><a href="#"><i class="fa fa-file-video-o"></i>Video Galeri</a></li>
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="#l">
+                <i class="fa fa-envelope"></i> <span>Mail Yönetimi</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="">
+                    <a href="#">
+                <li class="">
+                    <a href="#">
+                        <i class="fa fa-inbox"></i>Gelen Kutusu
+
+                        <span class="pull-right-container">
+                            <span class="label label-primary pull-right">13</span>
+                        </span>
+                    </a>
+                </li>
+                <li class=""><a href="#"><i class="fa fa-share"></i>E-Posta Yaz</a></li>
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-wrench"></i> <span>Ayarlar</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+         
+            <ul class="treeview-menu">
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-users"></i> <span>Kullanıcı Ayarları</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/Admin/Haber/Index"><i class="fa fa-lock"></i>İzinler</a></li>
+                        <li class="active"><a href="/Admin/Kategori/Index"><i class="fa fa-th- fa-briefcase"></i>Roller</a></li>
+                        <li class=""><a href="/Admin/Etiket/Index"><i class="fa fa-user"></i>Kullanıcılar</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="treeview-menu">
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-paint-brush"></i> <span>Tema Ayarları</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/Admin/Haber/Index"><i class="fa fa-dashboard"></i>Admin Tema</a></li>
+                        <li class="active"><a href="/Admin/Kategori/Index"><i class="fa fa-th-large"></i>Web Tema</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+
+
+        <li class=""><a href="#"><i class="fa fa-sign-out"></i> <span>Çıkış</span></a></li>
+    </ul>
+
+
+</section>

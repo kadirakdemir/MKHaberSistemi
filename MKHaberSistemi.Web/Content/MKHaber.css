@@ -1,0 +1,181 @@
+﻿body {
+}
+/*Girinti*/
+.sol {
+    margin-left: 60px;
+}
+
+/*Ekle-Düzenle*/
+.kategori {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 0px;
+}
+
+.logo-login{
+    float:left;
+    margin-left:40px;
+    margin-top:-50px;
+    font-size:30px;
+}
+.kaydet {
+    float: right;
+    font-size: 16px;
+    /*font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    margin-right: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 3px;
+    padding-top: 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*.kaydet:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    }*/
+.kaydetButton {
+    float: right;
+    font-size: 16px;
+    font-family: 'Source Sans Pro',sans-serif;
+}
+.iptal {
+    float: right;
+    font-size: 16px;
+    /*font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    margin-right: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 3px;
+    padding-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btniptal {
+    background-color: gainsboro;
+    text-decoration-color: white;
+    color: dimgray;
+}
+
+    .btniptal:hover {
+        /*box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);*/
+        color: dimgray;
+        background-color: lightgray;
+        border-color: #204d74;
+    }
+
+.btnsubmit {
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #337ab7;
+    width: 100px;
+    height: 40px;
+    /*font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif*/
+    /*padding: 15px 32px;
+    text-align: center;*/
+    /*text-decoration: none;*/
+    /*display: inline-block;*/
+    font-size: 16px;
+}
+
+    .btnsubmit:hover {
+        /*box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);*/
+        color: #fff;
+        background-color: #286090;
+        border-color: #204d74;
+    }
+
+.tableicon {
+    width: 150px;
+    text-align: center;
+    vertical-align: central;
+    margin: 0 auto;
+}
+
+.table-horta {
+    vertical-align: central;
+    margin-top: 100px;
+}
+
+.formdetay {
+    padding-top: 8px;
+}
+
+.rsm-duzen {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3px;
+    width: 150px;
+    height: 100px;
+}
+
+.rsm-detay {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+/*img:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    }*/
+
+
+.solbtn {
+    margin-left: 40px;
+}
+
+.solbtn-yazi {
+    padding-right: 5px;
+}
+
+.sol-yazi {
+    padding-right: 5px;
+    vertical-align: 50%;
+}
+
+.secimfalse-kategori {
+    color: red;
+    margin-left: 60px;
+}
+
+.secimtrue-kategori {
+    color: green;
+    margin-left: 60px;
+}
+
+.secimfalse-haber {
+    color: red;
+    margin-left: 30px;
+}
+
+.secimtrue-haber {
+    color: green;
+    margin-left: 30px;
+}
+
+
+
+
+
+@media all and (min-width: 800px) {
+    .fancybox-thumbs
+
+{
+    top: auto;
+    width: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 95px;
+    padding: 10px 10px 5px 10px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.fancybox-show-thumbs .fancybox-inner {
+    right: 0;
+    bottom: 95px;
+}
+}

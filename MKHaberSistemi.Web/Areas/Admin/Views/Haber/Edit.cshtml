@@ -1,0 +1,189 @@
+﻿@model MKHaberSistemi.Web.Areas.Admin.Models.HaberModels.EditHaberViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/chosen.css" rel="stylesheet" />
+<link href="~/Content/MKHaber.css" rel="stylesheet" />
+<link href="~/plugins/iCheck/square/blue.css" rel="stylesheet" />
+<link href="~/Content/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Scripts/sweetalert2.all.min.js"></script>
+<script src="~/plugins/iCheck/icheck.min.js"></script>
+<script src="~/Scripts/AdminControllerScripts/HaberScript.js"></script>
+<script src="~/Scripts/chosen.jquery.min.js"></script>
+<script type="text/javascript">
+        var app_root = '@Url.Content("~/")';
+
+        $(function () {
+            $(".chosen-single-select").chosen();
+        });
+
+        $(function () {
+            $(".chosen-multi-select").chosen();
+    });
+
+</script>
+
+<section class="content-header">
+    <h1>
+        Haber Düzenle
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Dashboard/Index"><i class="fa fa-home"></i> Anasayfa</a></li>
+        <li><a href="/Admin/Haber/Index"><i class="fa"></i>Haberler</a></li>
+        <li class="active">Haber Düzenle</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="kategori">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Haber Form</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                   
+                        @Html.AntiForgeryToken()
+
+                        <div class="box-body">
+                            @Html.HiddenFor(model => model.Id,new { id="id"})
+                            <div id="deneme" class="form-group">
+                                <label>Haber Adı</label>
+
+                                @Html.EditorFor(model => model.Baslik, new { htmlAttributes = new { @class = "form-control", id = "baslik" } })
+                                @Html.ValidationMessageFor(model => model.Baslik, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Aciklama</label>
+                                @Html.EditorFor(model => model.Aciklama, new { htmlAttributes = new { @class = "form-control", id = "aciklama" } })
+                                @Html.ValidationMessageFor(model => model.Aciklama, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label>Icerik</label>
+                                @Html.EditorFor(model => model.Icerik, MKHaberSistemi.Core.Domain.AppConstants.EditorDisplayTemplate_CKEditorTextArea, new { htmlAttributes = new { @class = "form-control", id = "ck_editor_textarea" } })
+                                @Html.ValidationMessageFor(model => model.Icerik, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label>Kaynak</label>
+                                @Html.EditorFor(model => model.Kaynak, new { htmlAttributes = new { @class = "form-control", id = "kaynak" } })
+                                @Html.ValidationMessageFor(model => model.Kaynak, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label class="">Kategori</label>
+                                <div class="">
+                                    @Html.DropDownListFor(model => model.KategoriID,
+                                    new SelectList(Model.Kategoriler, "ID", "Ad"), "--- Kategori Seçiniz ---",
+                                    new { @class = "form-control chosen-single-select", id = "kategoriid" })
+                                    @Html.ValidationMessageFor(model => model.KategoriID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.HaberPozisyonuID, htmlAttributes: new { @class = "control-label " })
+                                <div class="">
+                                    @Html.DropDownListFor(model => model.HaberPozisyonuID,
+                                    new SelectList(Model.HaberPozisyonlar, "ID", "Ad"), "--- Pozisyon Seçiniz ---",
+                                    new { @class = "form-control chosen-single-select", id = "haberpozisyonid" })
+                                    @Html.ValidationMessageFor(model => model.HaberPozisyonuID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.HaberTipiID, htmlAttributes: new { @class = "control-label " })
+                                <div class="">
+                                    @Html.DropDownListFor(model => model.HaberTipiID,
+                                    new SelectList(Model.HaberTipleri, "ID", "Ad"), "--- Tip Seçiniz ---",
+                                    new { @class = "form-control chosen-single-select",id="habertipid" })
+                                    @Html.ValidationMessageFor(model => model.HaberTipiID, "", new { @class = "text-danger", id = "Kategori" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SecilenEtiketId, htmlAttributes: new { @class = "control-label " })
+                                <div class="">
+                                    @Html.ListBoxFor(model => model.SecilenEtiketId,
+                                    new SelectList(Model.Etiketler, "ID", "Ad"),
+                                    new { @class = "form-control chosen-multi-select",id="secilenetiketid", data_placeholder = "Etiketler..." })
+                                    @Html.ValidationMessageFor(model => model.SecilenEtiketId, "", new { @class = "text-danger", id = "Kategori" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SecilenResimlerId, htmlAttributes: new { @class = "control-label c" })
+                                <div class="">
+                                    @Html.ListBoxFor(model => model.SecilenResimlerId,
+                                    new SelectList(Model.Resimler, "ID", "Ad"),
+                                    new { @class = "form-control chosen-multi-select",id="secilenresimlerid", data_placeholder = "Galeriler..." })
+                                    @Html.ValidationMessageFor(model => model.SecilenResimlerId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            @*<div class="form-group">
+                                    @Html.LabelFor(model => model.YazarId, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(model => model.YazarId,
+                                        new SelectList(Model.Yazarlar, "ID", "Name"), "--- Yazar Seçiniz ---",
+                                        new { @class = "form-control chosen-single-select" })
+                                        @Html.ValidationMessageFor(model => model.YazarId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>*@
+                            <div class="form-group">
+                                <label for="exampleInputFile">Resim Yükle</label>
+                                <input type="file" id="ImageInput" class="">
+                                @* @Html.EditorFor(model => model.ProfileImg, AkHaber.Core.Domain.AppConstants.EditorDisplayTemplate_HttpPostedFileBase, new { htmlAttributes = new { @class = "form-control", @id = "ImageInput" } })*@
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <div class="checkbox icheck">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.IsActive, new { type = "checkbox", id = "Aktif", @class = "checkbox icheck" })
+                                                Aktif mi?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <div class="checkbox icheck">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.IsYayinlandiMi, new { type = "checkbox", id = "IsYayinlandiMi", @class = "checkbox icheck" })
+                                                Aktif mi?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer ">
+                            <div class="">
+                                <a href="/Admin/Haber/Index" class="btniptal iptal">  <i class="fa fa-undo solbtn-yazi"></i> İptal</a>
+                            </div>
+                            <div class="">
+                                <button type="submit" class="btnsubmit kaydet" onclick="Edit()"><i class="fa fa-check solbtn-yazi"></i>Kaydet</button>
+                            </div>
+                        </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
+        });
+    </script>
+</section>
+
+
