@@ -32,7 +32,8 @@ namespace MKHaberSistemi.Data.DataContext
         public ApplicationDbContext() : base("MKHaberContext")
         {
             //Database.SetInitializer<ApplicationDbContext>(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
-            Database.SetInitializer<ApplicationDbContext>(null);
+            //Database.SetInitializer<ApplicationDbContext>(null);
+            Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
             Configuration.LazyLoadingEnabled = true;
         }
 
